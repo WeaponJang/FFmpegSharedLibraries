@@ -60,7 +60,7 @@ jobs:
       - name: Upload runtime artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ffmpeg-runtime-win64-${{ env.LICENSE_FLAVOR }}-shared-${{ env.FFMPEG_VERSION }}
-          path: ${{ runner.temp }}\ffmpeg-runtime-build\artifacts\*.zip
+          name: ffmpeg-win64-${{ env.LICENSE_FLAVOR }}-shared-${{ env.FFMPEG_VERSION }}
+          path: ${{ runner.temp }}/ffmpeg-runtime-build/package/
           if-no-files-found: error
           retention-days: 14
