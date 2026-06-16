@@ -185,7 +185,6 @@ if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
   pushd "$DAVS2_CONFIGURE_DIR" >/dev/null
   ./configure \
     --prefix="$DAVS2_INSTALL_ROOT" \
-    --disable-cli \
     --enable-pic \
     --bit-depth=10
   make -j"$CPU_COUNT"
