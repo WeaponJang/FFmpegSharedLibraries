@@ -345,7 +345,7 @@ CONFIGURE_FLAGS=(
   --disable-indevs
   --disable-outdevs
   --disable-devices
-  --disable-encoder
+  --disable-encoders
   --enable-encoder=png,apng,libx264,libx265,libsvtav1,libxavs2,ffv1,ffv1_vulkan,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,pcm_s16le
   --extra-ldflags=-static-libgcc\ -static-libstdc++
   "--extra-libs=-Wl,-Bstatic -lwinpthread -Wl,-Bdynamic"
