@@ -38,7 +38,6 @@ jobs:
             mingw-w64-x86_64-openssl
             mingw-w64-x86_64-bzip2
             mingw-w64-x86_64-zlib
-            mingw-w64-x86_64-iconv
             mingw-w64-x86_64-gmp
             mingw-w64-x86_64-libxml2
             mingw-w64-x86_64-libjxl
