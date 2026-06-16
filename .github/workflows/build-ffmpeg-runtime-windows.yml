@@ -34,15 +34,21 @@ jobs:
             mingw-w64-x86_64-ninja
             mingw-w64-x86_64-pkgconf
             mingw-w64-x86_64-yasm
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-bzip2
+            mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-iconv
+            mingw-w64-x86_64-gmp
+            mingw-w64-x86_64-libxml2
             mingw-w64-x86_64-x264        # libx264
             mingw-w64-x86_64-x265        # libx265
             mingw-w64-x86_64-svt-av1     # SVT-AV1
-            mingw-w64-x86_64-dav1d       # dav1d (AV1 解码)
+            mingw-w64-x86_64-dav1d       # dav1d 解码器
             mingw-w64-x86_64-vmaf        # libvmaf
             mingw-w64-x86_64-opus        # libopus
             mingw-w64-x86_64-lame        # libmp3lame
             mingw-w64-x86_64-libvpx      # libvpx (VP8/VP9)
-            mingw-w64-x86_64-zlib        # zlib (部分编码器压缩头需要)
+            mingw-w64-x86_64-libwebp     # libwebp
       - name: Build runtime
         shell: msys2 {0}
         run: |
