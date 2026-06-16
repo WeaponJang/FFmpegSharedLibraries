@@ -343,9 +343,8 @@ CONFIGURE_FLAGS=(
   --disable-lzma
   --disable-vaapi
   --disable-autodetect
-  --disable-iconv
   --enable-ffplay
-  --enable-SDL2
+  --enable-sdl2
   --disable-network
   --disable-indevs
   --disable-outdevs
