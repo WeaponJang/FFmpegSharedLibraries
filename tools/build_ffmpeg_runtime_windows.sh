@@ -201,7 +201,7 @@ libdir=\${exec_prefix}/lib
 includedir=\${prefix}/include
 
 Name: davs2
-Description: AVS2 (IEEE 1857.4) decoder library
+Description: AVS2-10bit (IEEE 1857.4) decoder library
 Version: 1.6.0
 Libs: -L\${libdir} -ldavs2 -Wl,-Bstatic -lstdc++ -lwinpthread -Wl,-Bdynamic
 Cflags: -I\${includedir}
@@ -327,9 +327,9 @@ pushd "$SOURCE_DIR" >/dev/null
 CONFIGURE_FLAGS=(
   --prefix="$INSTALL_ROOT"
   --arch=x86_64
-  --target-os=mingw32
-  --cc=gcc
-  --cxx=g++
+  --target-os=mingw64
+  --cc=clang
+  --cxx=clang++
   --ar=ar
   --nm=nm
   --ranlib=ranlib
@@ -349,7 +349,7 @@ CONFIGURE_FLAGS=(
   --disable-encoder
   --enable-encoder=png,apng,libx264,libx265,libsvtav1,libxavs2,ffv1,ffv1_vulkan,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,pcm_s16le
   --extra-ldflags=-static-libgcc\ -static-libstdc++
-  "--extra-libs=-Wl,-Bstatic -lstdc++ -lwinpthread -Wl,-Bdynamic"
+  "--extra-libs=-Wl,-Bstatic -lwinpthread -Wl,-Bdynamic"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
