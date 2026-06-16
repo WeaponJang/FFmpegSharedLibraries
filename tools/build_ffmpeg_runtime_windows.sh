@@ -348,7 +348,7 @@ CONFIGURE_FLAGS=(
   --disable-encoders
   --enable-encoder=png,apng,libx264,libx265,libsvtav1,libxavs2,ffv1,ffv1_vulkan,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,pcm_s16le
   --extra-ldflags=-static-libgcc\ -static-libstdc++
-  "--extra-libs=-Wl,-Bstatic -lwinpthread -Wl,-Bdynamic"
+  "--extra-libs=-Wl,-Bstatic -liconv -lwinpthread -Wl,-Bdynamic"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
