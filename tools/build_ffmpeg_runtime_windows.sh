@@ -339,6 +339,7 @@ CONFIGURE_FLAGS=(
   --disable-static
   --disable-doc
   --disable-debug
+  --disable-lzma
   --enable-autodetect
   --enable-iconv
   --enable-ffplay
