@@ -337,17 +337,17 @@ CONFIGURE_FLAGS=(
   --pkg-config="$PKG_CONFIG_BIN"
   --enable-shared
   --disable-static
-  --disable-programs
+  --enable-programs
   --disable-doc
   --disable-debug
-  --disable-autodetect
-  --disable-ffplay
-  --disable-network
+  --enable-autodetect
+  --enable-ffplay
+  --enable-network
   --disable-indevs
   --disable-outdevs
   --disable-devices
-  --disable-encoders
-  --enable-encoder=png,mjpeg,bmp
+  --disable-encoder
+  --enable-encoder=png,apng,libx264,libx265,libsvtav1,libxavs2,ffv1,ffv1_vulkan,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,pcm_s16le
   --extra-ldflags=-static-libgcc\ -static-libstdc++
   "--extra-libs=-Wl,-Bstatic -lstdc++ -lwinpthread -Wl,-Bdynamic"
 )
