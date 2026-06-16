@@ -345,7 +345,7 @@ CONFIGURE_FLAGS=(
   --disable-vaapi
   --disable-autodetect
   --disable-iconv
-  --disable-ffplay
+  --enable-ffplay
   --disable-network
   --disable-indevs
   --disable-outdevs
