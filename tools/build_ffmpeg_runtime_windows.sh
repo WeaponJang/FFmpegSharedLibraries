@@ -340,6 +340,7 @@ CONFIGURE_FLAGS=(
   --disable-doc
   --disable-debug
   --enable-autodetect
+  --enable-iconv
   --enable-ffplay
   --enable-network
   --disable-indevs
