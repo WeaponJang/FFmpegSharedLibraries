@@ -3,10 +3,7 @@
 GitHub Actions workflows for building FFmpeg shared-library runtimes with `libuavs3d` enabled and `libdavs2` (from `davs2-10bit`) enabled in GPL builds.
 
 ## Outputs
-
-- `macos-14`: arm64 `.dylib`
 - `windows-latest`: win64 `.dll`
-- `ubuntu-latest`: linux x64 `.so`
 
 Each workflow builds FFmpeg shared libraries only.
 
@@ -56,7 +53,4 @@ Manual runs use `workflow_dispatch` without custom input fields.
 - ffmpeg_cavs_dra patch source: https://github.com/maliwen2015/ffmpeg_cavs_dra
 
 ## Workflows
-
-- [`.github/workflows/build-ffmpeg-runtime-macos.yml`](./.github/workflows/build-ffmpeg-runtime-macos.yml)
 - [`.github/workflows/build-ffmpeg-runtime-windows.yml`](./.github/workflows/build-ffmpeg-runtime-windows.yml)
-- [`.github/workflows/build-ffmpeg-runtime-linux.yml`](./.github/workflows/build-ffmpeg-runtime-linux.yml)
