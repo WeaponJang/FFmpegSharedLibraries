@@ -61,16 +61,19 @@ PKG_CONFIG_BIN="${PKG_CONFIG_BIN:-pkgconf}"
 CPU_COUNT="$(nproc)"
 ENABLE_LIBDAVS2=false
 
-LIBRARY_NAMES=(
-  avutil-59.dll
-  swresample-5.dll
-  swscale-8.dll
-  avcodec-61.dll
-  avformat-61.dll
-  avfilter-10.dll
-  avdevice-61.dll
-  postproc-58.dll
-)
+mapfile -t LIBRARY_NAMES < <(find "$INSTALL_ROOT/bin" -maxdepth 1 -type f -name '*.dll' | sort)
+
+if [[ ${#LIBRARY_NAMES[@]} -eq 0 ]]; then
+  echo "No FFmpeg DLLs found in $INSTALL_ROOT/bin" >&2
+  exit 1
+fi
+
+# 打包循环无需改动，但 source_path 需适配完整路径
+for library_path in "${LIBRARY_NAMES[@]}"; do
+  library_name="$(basename "$library_path")"
+  cp -L "$library_path" "$RUNTIME_ROOT/$library_name"
+  chmod u+w "$RUNTIME_ROOT/$library_name"
+done
 
 SYSTEM_DLL_PATTERNS=(
   KERNEL32.DLL
