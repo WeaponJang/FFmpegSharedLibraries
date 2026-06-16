@@ -345,6 +345,7 @@ CONFIGURE_FLAGS=(
   --disable-autodetect
   --disable-iconv
   --enable-ffplay
+  --enable-SDL2
   --disable-network
   --disable-indevs
   --disable-outdevs
