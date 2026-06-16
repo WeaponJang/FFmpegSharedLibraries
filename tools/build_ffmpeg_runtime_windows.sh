@@ -337,7 +337,6 @@ CONFIGURE_FLAGS=(
   --pkg-config="$PKG_CONFIG_BIN"
   --enable-shared
   --disable-static
-  --enable-programs
   --disable-doc
   --disable-debug
   --enable-autodetect
