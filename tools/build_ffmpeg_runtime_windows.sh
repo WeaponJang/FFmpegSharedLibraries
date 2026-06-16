@@ -452,8 +452,4 @@ for dll in "$RUNTIME_ROOT"/*.dll; do
   done < <(dll_dependencies "$dll")
 done
 
-(
-  cd "$PACKAGE_ROOT"
-  zip -qj "$ARTIFACT_PATH" ./*.dll
-)
-echo "Created artifact: $ARTIFACT_PATH"
+echo Finish
