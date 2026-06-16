@@ -46,6 +46,7 @@ jobs:
       - name: Build runtime
         shell: msys2 {0}
         run: |
+          export PKG_CONFIG_PATH="/mingw64/lib/pkgconfig:$PKG_CONFIG_PATH"
           chmod +x tools/build_ffmpeg_runtime_windows.sh
           WORK_ROOT_UNIX="$(cygpath -u "$RUNNER_TEMP/$WORK_ROOT_DIR")"
           tools/build_ffmpeg_runtime_windows.sh \
