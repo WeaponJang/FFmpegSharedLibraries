@@ -47,7 +47,6 @@ jobs:
             mingw-w64-x86_64-twolame
             mingw-w64-x86_64-x264
             mingw-w64-x86_64-x265
-            mingw-w64-x86_64-svt-av1
             mingw-w64-x86_64-libvpx
             mingw-w64-x86_64-libwebp
       - name: Build runtime
