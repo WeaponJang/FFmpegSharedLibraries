@@ -372,7 +372,6 @@ CONFIGURE_FLAGS=(
   --enable-network
   --enable-libx264
   --enable-libx265
-  --enable-libsvtav1
   --enable-libvpx
   --enable-libwebp
   --enable-libjxl
@@ -382,7 +381,7 @@ CONFIGURE_FLAGS=(
   --disable-outdevs
   --disable-devices
   --disable-encoders
-  --enable-encoder=png,apng,libx264,libx265,libsvtav1,ffv1,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
+  --enable-encoder=png,apng,libx264,libx265,ffv1,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
   --extra-cflags="-U__cdecl"
   --extra-ldflags=-static-libgcc\ -static-libstdc++
   --pkg-config-flags="--static"
