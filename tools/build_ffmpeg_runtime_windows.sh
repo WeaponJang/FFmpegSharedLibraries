@@ -360,12 +360,11 @@ CONFIGURE_FLAGS=(
   --windres=windres
   --pkg-config="$PKG_CONFIG_BIN"
   --enable-shared
+  --disable-static
   --enable-nonfree
   --enable-lto
   --disable-doc
   --disable-debug
-  --disable-lzma
-  --disable-vaapi
   --disable-autodetect
   --enable-ffplay
   --enable-sdl2
