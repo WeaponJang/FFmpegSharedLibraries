@@ -61,11 +61,6 @@ PKG_CONFIG_BIN="${PKG_CONFIG_BIN:-pkgconf}"
 CPU_COUNT="$(nproc)"
 ENABLE_LIBDAVS2=false
 
-LIBRARY_NAMES=(
-  *.dll
-  *.exe
-)
-
 SYSTEM_DLL_PATTERNS=(
   KERNEL32.DLL
   USER32.DLL
@@ -417,16 +412,17 @@ make install
 
 popd >/dev/null
 
-for library_name in "${LIBRARY_NAMES[@]}"; do
-  source_path="$INSTALL_ROOT/bin/$library_name"
-  if [[ ! -f "$source_path" ]]; then
-    echo "Missing expected FFmpeg runtime library: $library_name" >&2
-    exit 1
-  fi
+while IFS= read -r -d '' file; do
+  base=$(basename "$file")
+  cp -L "$file" "$RUNTIME_ROOT/$base"
+  chmod u+w "$RUNTIME_ROOT/$base"
+done < <(find "$INSTALL_ROOT/bin" -maxdepth 1 \( -name '*.dll' -o -name '*.exe' \) -print0)
 
-  cp -L "$source_path" "$RUNTIME_ROOT/$library_name"
-  chmod u+w "$RUNTIME_ROOT/$library_name"
-done
+# 确保至少复制了一些文件
+if ! ls "$RUNTIME_ROOT/"*.dll "$RUNTIME_ROOT/"*.exe &>/dev/null; then
+  echo "No DLL or EXE files were copied from $INSTALL_ROOT/bin to $RUNTIME_ROOT" >&2
+  exit 1
+fi
 
 dll_dependencies() {
   objdump -p "$1" | awk '/DLL Name:/{print $3}' | sort -u
