@@ -377,7 +377,8 @@ CONFIGURE_FLAGS=(
   --enable-muxers
   --enable-demuxers
   --enable-encoders
-  --extra-ldflags="-Wl,-Bstatic -lstdc++ -lwinpthread -Wl,-Bdynamic"
+  --extra-ldflags="-static-libgcc -static-libstdc++"
+  --extra-libs="-Wl,-Bstatic -lwinpthread -lstdc++ -Wl,-Bdynamic"
   --pkg-config-flags="--shared"
 )
 
