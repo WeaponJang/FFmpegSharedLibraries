@@ -368,19 +368,24 @@ CONFIGURE_FLAGS=(
   --disable-autodetect
   --enable-ffplay
   --enable-sdl2
+  --enable-protocols
   --enable-openssl
   --enable-network
   --enable-libvpx
   --enable-libwebp
-  --enable-libopus
   --disable-indevs
   --disable-outdevs
   --disable-devices
-  --disable-encoders
-  --enable-encoder=png,apng,ffv1,flv,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
+  --enable-parsers
+  --enable-bsfs
+  --enable-decoders
+  --enable-muxers
+  --enable-demuxers
+  --enable-encoders
+  --enable-encoder=libvpx-vp9,libwebp_anim,libwebp
   --extra-ldflags="-static"
   --pkg-config-flags="--static"
-  "--extra-libs=-Wl,-Bstatic -lwinpthread -lstdc++ -lpthread -lwinmm -Wl,-Bdynamic"
+  "--extra-libs=-Wl,-Bstatic -lwinpthread -lstdc++ -Wl,-Bdynamic"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
