@@ -380,7 +380,7 @@ CONFIGURE_FLAGS=(
   --enable-w32threads
   --disable-pthreads
   --extra-ldflags="-static-libgcc -static-libstdc++"
-  --extra-libs="-Wl,-Bstatic -lstdc++ -Wl,-Bdynamic"
+  --extra-libs="-Wl,-Bstatic -lstdc++ -lm -lz -Wl,-Bdynamic"
   --pkg-config-flags="--shared"
 )
 
