@@ -366,7 +366,7 @@ CONFIGURE_FLAGS=(
   --disable-doc
   --disable-debug
   --disable-autodetect
-  --enable-numa
+  --disable-numa
   --enable-ffplay
   --enable-sdl2
   --enable-openssl
@@ -386,7 +386,7 @@ CONFIGURE_FLAGS=(
   --enable-encoder=png,apng,libx264,libx265,libsvtav1,ffv1,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
   --extra-ldflags=-static-libgcc\ -static-libstdc++
   --pkg-config-flags="--static"
-  "--extra-libs=-Wl,-Bstatic -lwinpthread -lnuma -lpthread -lwinmm -Wl,-Bdynamic"
+  "--extra-libs=-Wl,-Bstatic -lwinpthread -lpthread -lwinmm -Wl,-Bdynamic"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
