@@ -359,8 +359,8 @@ CONFIGURE_FLAGS=(
   --ranlib=ranlib
   --windres=windres
   --pkg-config="$PKG_CONFIG_BIN"
-  --enable-shared
-  --disable-static
+  --disable-shared
+  --enable-static
   --enable-nonfree
   --enable-lto
   --disable-doc
