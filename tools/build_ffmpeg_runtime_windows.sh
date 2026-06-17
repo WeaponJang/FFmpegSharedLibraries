@@ -379,7 +379,7 @@ CONFIGURE_FLAGS=(
   --enable-encoders
   --enable-w32threads
   --extra-ldflags="-static-libgcc -static-libstdc++"
-  --extra-libs="-Wl,-Bstatic -lstdc++ -lm -lz -lwinpthreads -Wl,-Bdynamic"
+  --extra-libs="-Wl,-Bstatic -lstdc++ -lm -lz -lwinpthread -Wl,-Bdynamic"
   --pkg-config-flags="--shared"
 )
 
