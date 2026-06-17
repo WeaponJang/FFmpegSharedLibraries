@@ -36,6 +36,7 @@ jobs:
             mingw-w64-x86_64-ninja
             mingw-w64-x86_64-pkgconf
             mingw-w64-x86_64-yasm
+            mingw-w64-x86_64-winpthreads
             mingw-w64-x86_64-bzip2
             mingw-w64-x86_64-zlib
             mingw-w64-x86_64-gmp
