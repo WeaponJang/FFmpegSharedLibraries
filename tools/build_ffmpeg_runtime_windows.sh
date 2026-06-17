@@ -374,14 +374,13 @@ CONFIGURE_FLAGS=(
   --enable-libx265
   --enable-libvpx
   --enable-libwebp
-  --enable-libjxl
   --enable-libtwolame
   --enable-libopus
   --disable-indevs
   --disable-outdevs
   --disable-devices
   --disable-encoders
-  --enable-encoder=png,apng,libx264,libx265,ffv1,flv,libjxl,libjxl_anim,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
+  --enable-encoder=png,apng,libx264,libx265,ffv1,flv,qoi,libvpx-vp9,libwebp_anim,libwebp,yuv4,eac3,libtwolame,qoa,pcm_s16le
   --extra-ldflags="-static"
   --pkg-config-flags="--static"
   "--extra-libs=-Wl,-Bstatic -lwinpthread -lstdc++ -lpthread -lwinmm -Wl,-Bdynamic"
