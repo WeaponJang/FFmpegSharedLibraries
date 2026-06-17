@@ -366,6 +366,7 @@ CONFIGURE_FLAGS=(
   --disable-doc
   --disable-debug
   --disable-autodetect
+  --enable-numa
   --enable-ffplay
   --enable-sdl2
   --enable-openssl
