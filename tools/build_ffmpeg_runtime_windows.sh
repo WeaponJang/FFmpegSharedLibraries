@@ -62,17 +62,8 @@ CPU_COUNT="$(nproc)"
 ENABLE_LIBDAVS2=false
 
 LIBRARY_NAMES=(
-  avutil-59.dll
-  swresample-5.dll
-  swscale-8.dll
-  avcodec-61.dll
-  avformat-61.dll
-  avfilter-10.dll
-  avdevice-61.dll
-  ffmpeg.exe
-  ffplay.exe
-  ffprobe.exe
-  postproc-58.dll
+  *.dll
+  *.exe
 )
 
 SYSTEM_DLL_PATTERNS=(
