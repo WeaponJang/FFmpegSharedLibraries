@@ -359,19 +359,15 @@ CONFIGURE_FLAGS=(
   --ranlib=ranlib
   --windres=windres
   --pkg-config="$PKG_CONFIG_BIN"
-  --disable-shared
-  --enable-static
+  --enable-shared
+  --disable-static
   --enable-nonfree
   --enable-lto
   --disable-doc
   --disable-debug
   --disable-autodetect
-  --enable-ffplay
-  --enable-sdl2
   --enable-protocols
-  --enable-openssl
   --enable-network
-  --enable-libwebp
   --disable-indevs
   --disable-outdevs
   --disable-devices
@@ -381,9 +377,8 @@ CONFIGURE_FLAGS=(
   --enable-muxers
   --enable-demuxers
   --enable-encoders
-  --enable-encoder=libwebp_anim,libwebp
-  --extra-ldflags="-Wl,-Bstatic -lstdc++ -lwinpthread -lwebp -Wl,-Bdynamic"
-  --pkg-config-flags="--static"
+  --extra-ldflags="-Wl,-Bstatic -lstdc++ -lwinpthread -Wl,-Bdynamic"
+  --pkg-config-flags="--shared"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
