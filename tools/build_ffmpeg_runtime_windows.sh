@@ -371,7 +371,6 @@ CONFIGURE_FLAGS=(
   --enable-protocols
   --enable-openssl
   --enable-network
-  --enable-libvpx
   --enable-libwebp
   --disable-indevs
   --disable-outdevs
@@ -382,10 +381,9 @@ CONFIGURE_FLAGS=(
   --enable-muxers
   --enable-demuxers
   --enable-encoders
-  --enable-encoder=libvpx-vp9,libwebp_anim,libwebp
-  --extra-ldflags="-static"
+  --enable-encoder=libwebp_anim,libwebp
+  --extra-ldflags="-Wl,-Bstatic -lstdc++ -lwinpthread -lwebp -Wl,-Bdynamic"
   --pkg-config-flags="--static"
-  "--extra-libs=-Wl,-Bstatic -lwinpthread -lstdc++ -Wl,-Bdynamic"
 )
 
 if [[ "$LICENSE_FLAVOR" == "gpl" ]]; then
