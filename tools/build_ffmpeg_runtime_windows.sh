@@ -69,6 +69,9 @@ LIBRARY_NAMES=(
   avformat-61.dll
   avfilter-10.dll
   avdevice-61.dll
+  ffmpeg.exe
+  ffplay.exe
+  ffprobe.exe
   postproc-58.dll
 )
 
