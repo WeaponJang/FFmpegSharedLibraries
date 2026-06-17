@@ -312,8 +312,44 @@ if [[ "$ENABLE_LIBDAVS2" == true ]]; then
   CPPFLAGS_ENTRIES+=("-I$DAVS2_INSTALL_ROOT/include")
 fi
 
-export PKG_CONFIG_PATH="$(IFS=:; echo "${PKG_CONFIG_PATH_ENTRIES[*]}")${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
-export CPPFLAGS="${CPPFLAGS_ENTRIES[*]}${CPPFLAGS:+ $CPPFLAGS}"
+NEW_PKG_CONFIG_PATH=""
+for entry in "${PKG_CONFIG_PATH_ENTRIES[@]}"; do
+  if [[ -n "$entry" ]]; then
+    if [[ -n "$NEW_PKG_CONFIG_PATH" ]]; then
+      NEW_PKG_CONFIG_PATH+=":"
+    fi
+    NEW_PKG_CONFIG_PATH+="$entry"
+  fi
+done
+
+# 追加原有的 PKG_CONFIG_PATH（如果存在）
+if [[ -n "${PKG_CONFIG_PATH:-}" ]]; then
+  if [[ -n "$NEW_PKG_CONFIG_PATH" ]]; then
+    NEW_PKG_CONFIG_PATH+=":"
+  fi
+  NEW_PKG_CONFIG_PATH+="$PKG_CONFIG_PATH"
+fi
+
+export PKG_CONFIG_PATH="$NEW_PKG_CONFIG_PATH"
+
+NEW_CPPFLAGS=""
+for flag in "${CPPFLAGS_ENTRIES[@]}"; do
+  if [[ -n "$flag" ]]; then
+    if [[ -n "$NEW_CPPFLAGS" ]]; then
+      NEW_CPPFLAGS+=" "
+    fi
+    NEW_CPPFLAGS+="$flag"
+  fi
+done
+
+if [[ -n "${CPPFLAGS:-}" ]]; then
+  if [[ -n "$NEW_CPPFLAGS" ]]; then
+    NEW_CPPFLAGS+=" "
+  fi
+  NEW_CPPFLAGS+="$CPPFLAGS"
+fi
+
+export CPPFLAGS="$NEW_CPPFLAGS"
 
 pushd "$SOURCE_DIR" >/dev/null
 
