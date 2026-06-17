@@ -43,7 +43,6 @@ jobs:
             mingw-w64-x86_64-gmp
             mingw-w64-x86_64-opus
             mingw-w64-x86_64-libxml2
-            mingw-w64-x86_64-libjxl
             mingw-w64-x86_64-twolame
             mingw-w64-x86_64-x264
             mingw-w64-x86_64-x265
