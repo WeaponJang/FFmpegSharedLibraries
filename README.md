@@ -1,9 +1,10 @@
 # FFmpegSharedLibraries
 
-GitHub Actions workflows for building FFmpeg shared-library runtimes with `libuavs3d` enabled and `libdavs2` (from `davs2-10bit`) enabled in GPL builds.
+GitHub Actions workflows for building FFmpeg shared-library programs with _
+`libuavs3d` enabled and `libdavs2` (from `davs2-10bit`) enabled and `cavs` (from `AVS1-P16`) in GPL builds.
 
 ## Outputs
-- `windows-latest`: win64 `.dll`
+- `windows-latest`: win64 `.dll , .exe`
 
 Each workflow builds FFmpeg shared libraries only.
 
