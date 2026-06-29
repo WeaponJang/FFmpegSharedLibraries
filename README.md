@@ -1,6 +1,6 @@
-# FFmpegSharedLibraries
+# FFmpegSharedProgram
 
-GitHub Actions workflows for building FFmpeg shared-library programs with _
+GitHub Actions workflows for building FFmpeg shared programs with _
 `libuavs3d` enabled and `libdavs2` (from `davs2-10bit`) enabled and `cavs` (from `AVS1-P16`) in GPL builds.
 
 ## Outputs
@@ -18,7 +18,7 @@ The build downloads third-party sources into the workflow temp work root (`$RUNN
   - enables 10-bit `davs2-10bit` builds,
   - propagates decoder-side packet file position metadata through `libdavs2` output.
 - `patches/davs2-10bit/0002-x86-build-avx-codepaths-as-dispatch-only.patch`
-  - keeps generic `x86_64` objects on an SSE4.x baseline instead of compiling the whole library with `-mavx`,
+  - keeps generic `x86_64` objects on an SSE4.x baseline instead of compiling the whole dll-files with `-mavx`,
   - builds AVX and AVX2 translation units separately so runtime CPUID dispatch stays compatible with both older and newer x86 devices.
 - `patches/davs2-10bit/0003-fix-dpb-stale-ref-frames.patch`
   - fixes a hang in the DPB (decoded picture buffer) allocation loop that can occur with certain AVS2 streams,
